@@ -1,0 +1,4 @@
+<app-preloader></app-preloader>
+<app-header *ngIf="!(location == '/coming-soon' || location == '/not-found')"></app-header>
+    <router-outlet></router-outlet>
+<app-footer *ngIf="!(location == '/coming-soon' || location == '/not-found')"></app-footer>

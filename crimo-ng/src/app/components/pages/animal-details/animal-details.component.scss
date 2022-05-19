@@ -1,0 +1,107 @@
+.nav-link.active{
+    color: white;
+    background: var(--gradientColor);
+    background-color: var(--mainColor);
+    border: 1px solid var(--mainColor);
+}
+.nav-link{
+    color: black;
+    border: 1px solid #d7d7d7;
+    border-radius: 30px;
+    font: {
+        size: 16px;
+        family: var(--optionalFontFamily);
+        weight: 600;
+    }
+    h3{
+        font: {
+            size: 16px;
+            family: var(--optionalFontFamily);
+            weight: 600;
+        }
+    }
+}
+.tab-content{
+    font: {
+        font-size: 14.5px;
+        max-width: 620px;
+        margin: {
+            top: 25px;
+            bottom: 0;
+        }
+    }
+
+}
+
+.carousel{
+    .carousel-control-prev,
+    .carousel-control-next
+    {
+        opacity: 1;
+        visibility: visible;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        color: var(--whiteColor);
+        background-color: var(--mainColor);
+        border-radius: 5px;
+        font-size: 15px;
+        transition: var(--transition);
+
+        :hover{
+            visibility: visible;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            color: var(--whiteColor);
+            background-color: var(--optionalColor);
+            border-radius: 5px;
+            font-size: 15px;
+            //transition: var(--transition);
+        }
+    }
+    .carousel-control-prev{
+        left: 20px;
+    }
+    .carousel-control-next{
+        right: 20px;
+    }
+    .carousel-control-prev-icon {
+        background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23FFFFFF' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z' clip-rule='evenodd'/></svg>");
+    }
+    .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23FFFFFF' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z' clip-rule='evenodd'/></svg>");
+    }
+
+
+}
+
+.card{
+    padding: 40px;
+    box-shadow: 0px 5px 28.5px 1.5px rgba(149, 152, 200, .2);
+    font: {
+        font-size: 14.5px;
+        max-width: 620px;
+        margin: {
+            top: 25px;
+            bottom: 0;
+        }
+    }
+    h3{
+        font: {
+            size: 16px;
+            family: var(--optionalFontFamily);
+            weight: 600;
+        }
+    }
+}
+
+

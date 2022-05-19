@@ -1,0 +1,86 @@
+<!-- Start Page Title Area -->
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>Animales</h2>
+            <ul>
+                <li><a routerLink="/">Inicio</a></li>
+                <li>Animales</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="dot-shape1"><img src="assets/img/shape/dot1.png" alt="image"></div>
+    <div class="dot-shape2"><img src="assets/img/shape/dot2.png" alt="image"></div>
+    <div class="dot-shape3"><img src="assets/img/shape/dot3.png" alt="image"></div>
+    <div class="dot-shape4"><img src="assets/img/shape/dot4.png" alt="image"></div>
+    <div class="dot-shape5"><img src="assets/img/shape/dot5.png" alt="image"></div>
+    <div class="dot-shape6"><img src="assets/img/shape/dot6.png" alt="image"></div>
+    <div class="dot-shape7"><img src="assets/img/shape/dot1.png" alt="image"></div>
+    <div class="shape16"><img src="assets/img/shape/shape13.svg" alt="image"></div>
+    <div class="shape17"><img src="assets/img/shape/shape14.svg" alt="image"></div>
+    <div class="shape18"><img src="assets/img/shape/shape15.png" alt="image"></div>
+    <div class="shape19"><img src="assets/img/shape/shape16.png" alt="image"></div>
+    <div class="shape20"><img src="assets/img/shape/shape14.svg" alt="image"></div>
+</div>
+<!-- End Page Title Area -->
+
+<!-- Start Blog Area -->
+<section class="blog-area ptb-110">
+    <div class="container" style="padding-bottom: 30px">
+        <div class="row">
+            <div class="col d-flex align-items-end justify-content-end flex-wrap">
+                <button class="btn btn-primary">Todas las Categorias</button>
+                <button class="btn btn-light">Reptiles</button>
+                <button class="btn btn-light">Aves</button>
+                <button class="btn btn-light">Mamíferos</button>
+                <button class="btn btn-light">Vida Marina</button>
+                <button class="btn btn-primary">Filtrar</button>
+                <button type="button" class="btn btn-primary">Nombre</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6" *ngFor="let item of pageSlice; index as i">
+                <div class="single-blog-post">
+                    <div class="card">
+                        <div class="entry-thumbnail">
+                            <a routerLink="/animal-details"><img src="assets/img/blog/blog1.jpg" alt="image"></a>
+                        </div>
+                        <div class="entry-post-content" style="padding: 25px; margin-top: 0px">
+
+                            <h3><a routerLink="/animal-details">Animal Name</a></h3>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li><p >Categoría</p></li>
+                                </ul>
+                            </div>
+
+                            <a routerLink="/animal-details" class="btn btn-primary" style="margin-top: 15px">
+                                Leer más &nbsp; <i class="flaticon-add-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12">
+                <div class="pagination-area">
+                    <a routerLink="/blog" class="prev page-numbers" (click)="onPrevPage()"><i class="fas fa-angle-double-left"></i></a>
+                    <a routerLink="/blog" class="page-numbers" (click)="OnPageChange(1)">1</a>
+                    <a routerLink="/blog" class="page-numbers" (click)="OnPageChange(2)">2</a>
+                    <a routerLink="/blog" class="page-numbers" (click)="OnPageChange(3)">3</a>
+                    <a routerLink="/blog" class="next page-numbers" (click)="onNextPage()"><i class="fas fa-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="shape13"><img src="assets/img/shape/shape13.svg" alt="image"></div>
+    <div class="shape14"><img src="assets/img/shape/shape13.svg" alt="image"></div>
+</section>
+<!-- End Blog Area -->
