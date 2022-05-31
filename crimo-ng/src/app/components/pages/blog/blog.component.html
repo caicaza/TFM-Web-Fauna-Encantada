@@ -30,13 +30,13 @@
     <div class="container" style="padding-bottom: 30px">
         <div class="row">
             <div class="col d-flex align-items-end justify-content-end flex-wrap">
-                <button class="btn btn-primary">Todas las Categorias</button>
-                <button class="btn btn-light">Reptiles</button>
-                <button class="btn btn-light">Aves</button>
-                <button class="btn btn-light">Mamíferos</button>
-                <button class="btn btn-light">Vida Marina</button>
-                <button class="btn btn-primary">Filtrar</button>
-                <button type="button" class="btn btn-primary">Nombre</button>
+                <button routerLink="/animal" class="btn btn-primary" (click)="onChangeCategory('todas')">Todas las Categorias</button>
+                <button routerLink="/animal" class="btn btn-light" (click)="onChangeCategory('reptil')">Reptiles</button>
+                <button routerLink="/animal" class="btn btn-light" (click)="onChangeCategory('ave')">Aves</button>
+                <button routerLink="/animal" class="btn btn-light" (click)="onChangeCategory('mamifero')">Mamíferos</button>
+                <button routerLink="/animal" class="btn btn-light" (click)="onChangeCategory('vidaMarina')">Vida Marina</button>
+                <!--<button class="btn btn-primary">Filtrar</button>
+                <button type="button" class="btn btn-primary">Nombre</button>-->
 
             </div>
         </div>
@@ -48,18 +48,18 @@
                 <div class="single-blog-post">
                     <div class="card">
                         <div class="entry-thumbnail">
-                            <a routerLink="/animal-details"><img src="assets/img/blog/blog1.jpg" alt="image"></a>
+                            <a (click)="onReadMore(item)"><img src="https://embed.smartframe.io/9ea8092d716b95599a3c5e8fc350ffb8.js" alt="image"></a>
                         </div>
                         <div class="entry-post-content" style="padding: 25px; margin-top: 0px">
 
-                            <h3><a routerLink="/animal-details">Animal Name</a></h3>
+                            <h3><a (click)="onReadMore(item)">{{item.nombre}}</a></h3>
                             <div class="entry-meta">
                                 <ul>
-                                    <li><p >Categoría</p></li>
+                                    <li><p >Categoría: {{item.categoria}}</p></li>
                                 </ul>
                             </div>
 
-                            <a routerLink="/animal-details" class="btn btn-primary" style="margin-top: 15px">
+                            <a (click)="onReadMore(item)" class="btn btn-primary" style="margin-top: 15px">
                                 Leer más &nbsp; <i class="flaticon-add-1"></i>
                             </a>
                         </div>
@@ -69,11 +69,11 @@
 
             <div class="col-lg-12 col-md-12">
                 <div class="pagination-area">
-                    <a routerLink="/blog" class="prev page-numbers" (click)="onPrevPage()"><i class="fas fa-angle-double-left"></i></a>
-                    <a routerLink="/blog" class="page-numbers" (click)="OnPageChange(1)">1</a>
-                    <a routerLink="/blog" class="page-numbers" (click)="OnPageChange(2)">2</a>
-                    <a routerLink="/blog" class="page-numbers" (click)="OnPageChange(3)">3</a>
-                    <a routerLink="/blog" class="next page-numbers" (click)="onNextPage()"><i class="fas fa-angle-double-right"></i></a>
+                    <a id="prevButton" routerLink="/animal" class="prev page-numbers" (click)="onPrevPage()"><i class="fas fa-angle-double-left"></i></a>
+                    <a id="firstButton" routerLink="/animal" class="page-numbers" style="display: inline-block" (click)="OnPageChange(1)">1</a>
+                    <a id="secondButton" routerLink="/animal" class="page-numbers" (click)="OnPageChange(2)">2</a>
+                    <a id="thirdButton" routerLink="/animal" class="page-numbers" (click)="OnPageChange(3)">3</a>
+                    <a id="nextButton" routerLink="/animal" class="next page-numbers" (click)="onNextPage()"><i class="fas fa-angle-double-right"></i></a>
                 </div>
             </div>
         </div>
@@ -82,5 +82,20 @@
 
     <div class="shape13"><img src="assets/img/shape/shape13.svg" alt="image"></div>
     <div class="shape14"><img src="assets/img/shape/shape13.svg" alt="image"></div>
+
 </section>
 <!-- End Blog Area -->
+<!--<div>
+    <script src="https://embed.smartframe.io/9ea8092d716b95599a3c5e8fc350ffb8.js" data-image-id="00577332" data-width="100%" data-max-width="1500px"></script>
+    <iframe width="100%" height="439.77266666666446" src="https://embed.smartframe.io/s/9ea8092d716b95599a3c5e8fc350ffb8/00577332.html?source=aHR0cHM6Ly9nYWxhcGFnb3Njb25zdWx0YW50LmNvbS9Db25zZXJ2YXRpb24tUGhvdG9zL0luZGV4Lmh0bWw.#1" data-sf-frame="1" class="smartframe-embed" style="border: 0px; padding: 0px; margin: 0px; max-width: 1500px; pointer-events: none; opacity: 1;" allowfullscreen="" scrolling="no">
+    </iframe>
+</div>
+<div>
+    <script src="https://embed.smartframe.io/9ea8092d716b95599a3c5e8fc350ffb8.js" data-image-id="00554916" data-width="100%"  data-max-width="1500px"></script>
+    <script src="https://embed.smartframe.io/9ea8092d716b95599a3c5e8fc350ffb8.js" data-image-id="00536613" data-width="100%" data-max-width="1500px"></script>
+&lt;!&ndash;    <smart-frame image-id="[00554916]"></smart-frame>&ndash;&gt;
+    <iframe width="100%" height="439.77266666666446" src="https://embed.smartframe.io/s/9ea8092d716b95599a3c5e8fc350ffb8" data-sf-frame="1" class="smartframe-embed" style="border: 0px; padding: 0px; margin: 0px; max-width: 1500px; pointer-events: none; opacity: 1;" allowfullscreen="" scrolling="no">
+    </iframe>
+</div>-->
+
+<script src="https://embed.smartframe.io/9ea8092d716b95599a3c5e8fc350ffb8.js" data-image-id="00554916" data-width="100%" data-max-width="1500px"></script>
