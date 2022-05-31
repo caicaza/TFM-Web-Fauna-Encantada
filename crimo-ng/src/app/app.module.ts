@@ -20,7 +20,7 @@ import { ProjectsComponent } from './components/pages/projects/projects.componen
 import { ProjectDetailsComponent } from './components/pages/project-details/project-details.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { AnimalDetailsComponent } from './components/pages/animal-details/animal-details.component';
-import { FilterPipe } from './pipes/filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +42,6 @@ import { FilterPipe } from './pipes/filter.pipe';
     ProjectDetailsComponent,
     ContactComponent,
     AnimalDetailsComponent,
-    FilterPipe
   ],
   imports: [
     BrowserModule,
