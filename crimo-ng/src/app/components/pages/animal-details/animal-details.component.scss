@@ -1,9 +1,11 @@
-.nav-link.active{
-    color: white;
-    background: var(--gradientColor);
-    background-color: var(--mainColor);
-    border: 1px solid var(--mainColor);
+model-viewer {
+    position: relative;
+    float: left;
+    height: 50vw;
+    width: 50%;
 }
+
+
 .nav-link{
     color: black;
     border: 1px solid #d7d7d7;
@@ -15,10 +17,20 @@
     }
     h3{
         font: {
+
             size: 16px;
             family: var(--optionalFontFamily);
             weight: 600;
         }
+    }
+}
+.nav-link.active{
+    color: white;
+    background: var(--gradientColor);
+    background-color: var(--mainColor);
+    border: 1px solid var(--mainColor);
+    h3{
+        color: white;
     }
 }
 .tab-content{

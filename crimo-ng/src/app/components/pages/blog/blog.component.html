@@ -10,6 +10,8 @@
         </div>
     </div>
 
+
+
     <div class="dot-shape1"><img src="assets/img/shape/dot1.png" alt="image"></div>
     <div class="dot-shape2"><img src="assets/img/shape/dot2.png" alt="image"></div>
     <div class="dot-shape3"><img src="assets/img/shape/dot3.png" alt="image"></div>
@@ -24,7 +26,6 @@
     <div class="shape20"><img src="assets/img/shape/shape14.svg" alt="image"></div>
 </div>
 <!-- End Page Title Area -->
-
 <!-- Start Blog Area -->
 <section class="blog-area ptb-110">
     <div class="container" style="padding-bottom: 30px">
@@ -48,14 +49,34 @@
                 <div class="single-blog-post">
                     <div class="card">
                         <div class="entry-thumbnail">
-                            <a (click)="onReadMore(item)"><img src="https://embed.smartframe.io/9ea8092d716b95599a3c5e8fc350ffb8.js" alt="image"></a>
+                            <a (click)="onReadMore(item)">
+                                <ng-container *ngIf="item.isAnotherImage" >
+                                    <img style="object-fit: cover; height: 270px;
+                                    display: block;
+                                    margin-left: auto;  margin-right: auto;"
+                                        [src] = "item.urlSafe">
+                                </ng-container>
+                                <ng-container *ngIf="item.isMindenPictures" >
+                                    <iframe
+                                        style="text-align:center;
+                                        pointer-events: none;
+                                        display: block;
+                                        margin-top: auto;  margin-bottom: auto;"
+                                        width="100%" height="270vh"
+                                            [src] = "item.urlSafe"
+                                            data-sf-frame="0"
+                                            allowfullscreen=""
+                                            scrolling="no"
+                                    ></iframe>
+                                </ng-container>
+                            </a>
                         </div>
                         <div class="entry-post-content" style="padding: 25px; margin-top: 0px">
 
                             <h3><a (click)="onReadMore(item)">{{item.nombre}}</a></h3>
                             <div class="entry-meta">
                                 <ul>
-                                    <li><p >Categoría: {{item.categoria}}</p></li>
+                                    <li><p >Categoría: {{item.categoriaName}}</p></li>
                                 </ul>
                             </div>
 
@@ -84,6 +105,11 @@
     <div class="shape14"><img src="assets/img/shape/shape13.svg" alt="image"></div>
 
 </section>
+<!--<script type="text/javascript" src="https://embed.smartframe.io/9ea8092d716b95599a3c5e8fc350ffb8.js" data-image-id="00599607" data-width="100%" data-max-width="1500px"></script>
+<div>-->
+
+
+
 <!-- End Blog Area -->
 <!--<div>
     <script src="https://embed.smartframe.io/9ea8092d716b95599a3c5e8fc350ffb8.js" data-image-id="00577332" data-width="100%" data-max-width="1500px"></script>
@@ -98,4 +124,4 @@
     </iframe>
 </div>-->
 
-<script src="https://embed.smartframe.io/9ea8092d716b95599a3c5e8fc350ffb8.js" data-image-id="00554916" data-width="100%" data-max-width="1500px"></script>
+
