@@ -22,3 +22,9 @@ export interface AnimalDetailModel {
     referencias: string;
     isMindenPictures: boolean;
 }
+export interface Animal3dModel {
+    id: string;
+    src3D: string;
+    shadow: string;
+    arplacement: string;
+}

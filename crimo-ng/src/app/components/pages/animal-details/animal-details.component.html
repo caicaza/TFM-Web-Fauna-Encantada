@@ -27,14 +27,27 @@
 </div>
 <!-- End Page Title Area -->
 
-<!--<div class="container">
-    <model-viewer
-        src="assets/3d_Objects/MUNECO_DE_NIEVE_TEST.glb"
-        alt="An animated 3D model of a robot"
-        camera-controls autoplay ar shadow-intensity="1"
-    ></model-viewer>
+<ng-container *ngIf="exist3dmodel">
+    <div class="row">
+        <div class="col">
+            <!--
+            src="assets/3d_Objects/lobo_marino_galapagos_3d.glb"
+            src="assets/3d_Objects/tortuga_este_de_santa_cruz_3D.glb"
+            -->
 
-</div>-->
+            <model-viewer
+                [attr.src]="animal3Dselected.src3D"
+                alt="An animated 3D model of a robot"
+                camera-controls autoplay ar
+                [attr.shadow-intensity] = "animal3Dselected.shadow"
+                ar [attr.ar-placement] = "animal3Dselected.arplacement"
+
+            ></model-viewer>
+        </div>
+    </div>
+
+
+</ng-container>
 
 <div class="container ptb-110" >
     <div class="card" style="padding: 40px">

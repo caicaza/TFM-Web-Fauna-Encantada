@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AnimalDetailModel} from '../../model/animalsModel';
+import {Animal3dModel, AnimalDetailModel} from '../../model/animalsModel';
 import {ActivatedRoute} from '@angular/router';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
@@ -14,9 +14,11 @@ export class AnimalDetailsComponent implements OnInit {
     strOrgTax = 'Origen del taxón: ';
     strDis = 'Distribución: ';
     strEst = 'Estado: ';
+    // links para el url de smartframe
     smartframeUrl1 = 'https://embed.smartframe.io/s/9ea8092d716b95599a3c5e8fc350ffb8/';
     smartframeUrl2 = '.html?source=aHR0cDovL2xvY2FsaG9zdDo0MjAwL2FuaW1hbA..#0\',\n' +
         '        \'https://embed.smartframe.io/s/9ea8092d716b95599a3c5e8fc350ffb8/00573086.html?source=aHR0cDovL2xvY2FsaG9zdDo0MjAwL2FuaW1hbA..#0';
+    // ID de las fotografias de minden pictures
     tortSCruz1 = '00573086';
     tortSCruz2 = '00573087';
     tortSCruz3 = '00554916';
@@ -36,21 +38,24 @@ export class AnimalDetailsComponent implements OnInit {
     iguanmarin1 = '00141054';
     iguanmarin2 = '00573166';
     iguanmarin3 = '00577696';
+    // URL de los otros sitios de fotografias
     murcirojo1 = 'https://www.quasarex.com/wp-content/uploads/2021/03/red-bat-galapagos.jpg';
     murcirojo2 = 'https://www.quasarex.com/wp-content/uploads/2021/03/galapagos-red-bat.jpg';
     langostroja1 = 'https://inaturalist-open-data.s3.amazonaws.com/photos/176817298/large.jpeg';
     langostroja2 = 'https://static.inaturalist.org/photos/115766304/large.jpeg';
     langostroja3 = 'https://inaturalist-open-data.s3.amazonaws.com/photos/104573889/large.jpeg';
-    fotos1: string[] = [
+    // Foto de prueba
+    /*fotos1: string[] = [
         this.smartframeUrl1 + this.tortSCruz1 + this.smartframeUrl2,
         this.smartframeUrl1 + this.tortSCruz2 + this.smartframeUrl2,
         this.smartframeUrl1 + this.tortSCruz3 + this.smartframeUrl2
-    ];
+    ];*/
     imgEstado = 'assets/img/RedList/';
     imgCR = this.imgEstado + 'peligroCritico.png';
     imgVU = this.imgEstado + 'vulnerable.png';
     imgNE = this.imgEstado + 'NoEvaluado.png';
     imgEN = this.imgEstado + 'peligroDeExtincion.png';
+    // ****** LISTA DE ANIMALES ******
     lista: AnimalDetailModel[] = [
         // TORTUGA GIGANTE DE SANTA CRUZ
         // tslint:disable-next-line:max-line-length
@@ -239,10 +244,27 @@ export class AnimalDetailsComponent implements OnInit {
         }
     ];
     animalSelected: AnimalDetailModel;
-    private modelViewerHtml: string;
-    isModelViewerVisible = false;
-    cameraOrbit = '45deg 55deg 2.5m';
-    src = 'https://modelviewer.dev/shared-assets/models/Astronaut.glb';
+    // Variables de prueba para el model viewer
+    srcTortugaSantaCruz = 'assets/3d_Objects/tortuga_este_de_santa_cruz_3D.glb';
+    shadow = '1';
+    arplacement = 'floor';
+    // ***** LISTA DE MODELOS 3D *******
+    ruta3D = 'assets/3d_Objects/';
+    animal3Dselected: Animal3dModel;
+    exist3dmodel: boolean;
+    lista3D: Animal3dModel[] = [{
+        id: 'Tortuga_gigante_de_Santa_Cruz',
+        src3D: this.ruta3D + 'tortuga_este_de_santa_cruz_3D.glb',
+        shadow: '1',
+        arplacement: 'floor'
+    },
+        {
+            id: 'Lobo_marino_de_galapagos',
+            src3D: this.ruta3D + 'lobo_marino_galapagos_3d.glb',
+            shadow: '0',
+            arplacement: 'floor'
+        },
+    ];
     constructor(private route: ActivatedRoute, public sanitizer: DomSanitizer) { }
     ngOnInit(): void {
         // Función necesaria para utilizar enlaces externos para usar iframe
@@ -292,6 +314,7 @@ export class AnimalDetailsComponent implements OnInit {
         }
     }
     OnSelectAnimalDetail(animalId){
+        // Busca el id en la lista
         // tslint:disable-next-line:prefer-for-of
         for (let i = 0; i < this.lista.length ; i++) {
           // tslint:disable-next-line:triple-equals
@@ -300,6 +323,17 @@ export class AnimalDetailsComponent implements OnInit {
               break;
           }
       }
+        // Busca el id en la lista de animales 3d, si no lo encuentra existanimal es false y no se desplegara el container
+        this.exist3dmodel = false;
+        // tslint:disable-next-line:prefer-for-of
+        for (let i = 0; i < this.lista3D.length ; i++) {
+            // tslint:disable-next-line:triple-equals
+            if (this.lista3D[i].id == animalId){
+                this.animal3Dselected = this.lista3D[i];
+                this.exist3dmodel = true;
+                break;
+            }
+        }
   }
 
 }
