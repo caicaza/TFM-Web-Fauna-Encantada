@@ -1193,15 +1193,15 @@ Main Banner Area CSS
 .shape4 {
     position: absolute;
     z-index: -1;
-    left: 5px;
-    bottom: 98px;
+    left: 4%;
+    bottom: 10%;
     animation: movebounce 5s linear infinite;
 }
 .shape5 {
     position: absolute;
     z-index: -1;
-    bottom: 12%;
-    left: 20%;
+    left: 26%;
+    bottom: 10%;
     animation-name: rotateme;
     animation-duration: 20s;
     animation-iteration-count: infinite;
@@ -1210,8 +1210,8 @@ Main Banner Area CSS
 .shape6 {
     position: absolute;
     z-index: -1;
-    left: 34%;
-    bottom: 26%;
+    bottom: 12%;
+    left: 20%;
     animation: rotate3d 4s linear infinite;
 }
 .shape7 {
@@ -1225,7 +1225,7 @@ Main Banner Area CSS
 .shape8 {
     position: absolute;
     z-index: -1;
-    left: 48%;
+    left: 40%;
     bottom: 17%;
     animation: movescale 3s linear infinite;
 }
