@@ -30,10 +30,6 @@
 <ng-container *ngIf="exist3dmodel">
     <div class="row">
         <div class="col">
-            <!--
-            src="assets/3d_Objects/lobo_marino_galapagos_3d.glb"
-            src="assets/3d_Objects/tortuga_este_de_santa_cruz_3D.glb"
-            -->
 
             <model-viewer
                 [attr.src]="animal3Dselected.src3D"
@@ -41,6 +37,7 @@
                 camera-controls autoplay ar
                 [attr.shadow-intensity] = "animal3Dselected.shadow"
                 ar [attr.ar-placement] = "animal3Dselected.arplacement"
+                ar-modes="webxr scene-viewer quick-look"
 
             ></model-viewer>
         </div>
@@ -54,14 +51,14 @@
         <div class="row px-2 px-md-5 py-4 py-md-5" >
             <!--        CAROUSEL-->
             <div class="col-lg-6 col-md-12 px-2">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false"
+                style="
+                padding-bottom: 50px;"
+                >
+
                     <div class="carousel-inner">
                         <div class="carousel-item active">
+<!--                            MINDEN PICTURES-->
                             <ng-container *ngIf="animalSelected.isMindenPictures" >
                                 <div class="container-iframe">
                                     <iframe class="iframe-responsive"
@@ -73,6 +70,7 @@
                                     ></iframe>
                                 </div>
                             </ng-container>
+<!--                            OTRO TIPO DE IMAGEN-->
                             <ng-container *ngIf="!animalSelected.isMindenPictures" >
                                 <div class="container" style="
                                 padding: 0;
@@ -130,6 +128,81 @@
                             </ng-container>
                         </div>
                     </div>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active thumbnail" aria-current="true" aria-label="Slide 1">
+
+                            <!-- MINDEN PICTURES-->
+                            <ng-container *ngIf="animalSelected.isMindenPictures" >
+                                <div class="container-iframe">
+                                    <iframe class="iframe-responsive"
+                                            [src] = "animalSelected.urlSafe[0]"
+                                            data-sf-frame="0"
+                                            allowfullscreen=""
+                                            scrolling="no"
+                                            align="center"
+                                    ></iframe>
+                                </div>
+                            </ng-container>
+                            <!--                            OTRO TIPO DE IMAGEN-->
+                            <ng-container *ngIf="!animalSelected.isMindenPictures" >
+                                <div class="container" style="
+                                padding: 0;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;">
+                                    <img [src]="animalSelected.fotos[0]">
+                                </div>
+                            </ng-container>
+                        </button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="thumbnail" aria-label="Slide 2">
+                            <!-- MINDEN PICTURES-->
+                            <ng-container *ngIf="animalSelected.isMindenPictures" >
+                                <div class="container-iframe">
+                                    <iframe class="iframe-responsive"
+                                            [src] = "animalSelected.urlSafe[1]"
+                                            data-sf-frame="0"
+                                            allowfullscreen=""
+                                            scrolling="no"
+                                            align="center"
+                                    ></iframe>
+                                </div>
+                            </ng-container>
+                            <!--                            OTRO TIPO DE IMAGEN-->
+                            <ng-container *ngIf="!animalSelected.isMindenPictures" >
+                                <div class="container" style="
+                                padding: 0;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;">
+                                    <img [src]="animalSelected.fotos[1]">
+                                </div>
+                            </ng-container>
+                        </button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="thumbnail" aria-label="Slide 3">
+                            <!-- MINDEN PICTURES-->
+                            <ng-container *ngIf="animalSelected.isMindenPictures" >
+                                <div class="container-iframe">
+                                    <iframe class="iframe-responsive"
+                                            [src] = "animalSelected.urlSafe[2]"
+                                            data-sf-frame="0"
+                                            allowfullscreen=""
+                                            scrolling="no"
+                                            align="center"
+                                    ></iframe>
+                                </div>
+                            </ng-container>
+                            <!--                            OTRO TIPO DE IMAGEN-->
+                            <ng-container *ngIf="!animalSelected.isMindenPictures" >
+                                <div class="container" style="
+                                padding: 0;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;">
+                                    <img [src]="animalSelected.fotos[2]">
+                                </div>
+                            </ng-container>
+                        </button>
+                    </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true" ></span>
                         <span class="visually-hidden">Previous</span>
@@ -141,9 +214,7 @@
                 </div>
 
                 <!--            MINI IMAGENES-->
-                <img style="height: 80px;width: 80px; padding-left: 5px" src="assets/img/blog/blog1.jpg">
-                <img style="height: 80px;width: 80px; padding-left: 5px" src="assets/img/blog/blog1.jpg">
-                <img style="height: 80px;width: 80px; padding-left: 5px" src="assets/img/blog/blog1.jpg">
+
 
             </div>
             <div class="col-lg-6 col-sm-12 px-2 mt-3">
@@ -176,7 +247,6 @@
                             <p style="white-space: pre-line">
                                 {{animalSelected.acercaDe}}
                             </p>
-
                         </div>
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                             <p style="white-space: pre-line">
@@ -188,7 +258,6 @@
                                 {{animalSelected.propiedades[2]}}
                                 <strong>{{strEst}}</strong>
                                 {{animalSelected.propiedades[3]}}
-
                             </p>
                             <div class="container" style="
                             display: flex;
@@ -197,16 +266,11 @@
                             height: 400px; ">
                                 <img [src]="animalSelected.imgEstado" style="max-height: 80%">
                             </div>
-
-
-
                         </div>
                         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                             <img [src]="animalSelected.imgMapa">
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -214,21 +278,7 @@
 
 </div>
 
-<!--<model-viewer camera-controls autoplay ar shadow-intensity="1" src="assets/3d_Objects/MUNECO_DE_NIEVE_TEST.glb" alt="An animated 3D model of a robot"></model-viewer>-->
-
-<!--<model-viewer
-    camera-controls
-    [attr.camera-orbit]="cameraOrbit"
-    [attr.src]="src"
-    alt="A 3D model of an astronaut"
-    data-js-focus-visible=""
-    ar-status="not-presenting"
->
-</model-viewer>-->
-
-
 <div class="container  ptb-110 pt-0">
-
     <div class="card">
         <h3 class="pb-3">
             Referencias

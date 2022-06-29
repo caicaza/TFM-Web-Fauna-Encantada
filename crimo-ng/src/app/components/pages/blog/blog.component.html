@@ -49,6 +49,7 @@
                 <div class="single-blog-post">
                     <div class="card">
                         <div class="entry-thumbnail">
+<!--                            IMÁGENES-->
                             <a (click)="onReadMore(item)">
                                 <ng-container *ngIf="item.isAnotherImage" >
                                     <img style="object-fit: cover; height: 270px;
@@ -72,14 +73,12 @@
                             </a>
                         </div>
                         <div class="entry-post-content" style="padding: 25px; margin-top: 0px">
-
                             <h3><a (click)="onReadMore(item)">{{item.nombre}}</a></h3>
                             <div class="entry-meta">
                                 <ul>
                                     <li><p >Categoría: {{item.categoriaName}}</p></li>
                                 </ul>
                             </div>
-
                             <a (click)="onReadMore(item)" class="btn btn-primary" style="margin-top: 15px">
                                 Leer más &nbsp; <i class="flaticon-add-1"></i>
                             </a>
@@ -91,7 +90,7 @@
             <div class="col-lg-12 col-md-12">
                 <div class="pagination-area">
                     <a id="prevButton" routerLink="/animal" class="prev page-numbers" (click)="onPrevPage()"><i class="fas fa-angle-double-left"></i></a>
-                    <a id="firstButton" routerLink="/animal" class="page-numbers" style="display: inline-block" (click)="OnPageChange(1)">1</a>
+                    <a id="firstButton" routerLink="/animal" class="page-numbers " style="display: inline-block" (click)="OnPageChange(1)">1</a>
                     <a id="secondButton" routerLink="/animal" class="page-numbers" (click)="OnPageChange(2)">2</a>
                     <a id="thirdButton" routerLink="/animal" class="page-numbers" (click)="OnPageChange(3)">3</a>
                     <a id="nextButton" routerLink="/animal" class="next page-numbers" (click)="onNextPage()"><i class="fas fa-angle-double-right"></i></a>

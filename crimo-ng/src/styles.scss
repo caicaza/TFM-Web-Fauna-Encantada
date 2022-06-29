@@ -3499,11 +3499,12 @@ Pagination Area CSS
             size: 16px;
             weight: 700;
         }
-        &.current, &:hover, &:focus {
+        &.current, &:hover, &:focus{
             background: var(--mainColor);
             color: var(--whiteColor);
             box-shadow: unset;
         }
+
     }
 }
 
@@ -4565,7 +4566,7 @@ Footer Area CSS
     background-color: #182c51;
 }
 .single-footer-widget {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 
     .logo {
         margin-bottom: 20px;
@@ -4587,7 +4588,7 @@ Footer Area CSS
         margin-bottom: 0;
         list-style-type: none;
 
-        li {
+        /*li {
             display: inline-block;
             transition: var(--transition);
             margin: {
@@ -4613,10 +4614,10 @@ Footer Area CSS
                     color: var(--whiteColor);
                 }
             }
-        }
+        }*/
     }
     h3 {
-        margin-bottom: 23px;
+        margin-bottom: 25px;
         color: var(--whiteColor);
         position: relative;
         padding-bottom: 6px;
@@ -4639,7 +4640,7 @@ Footer Area CSS
         margin-bottom: 0;
         list-style-type: none;
 
-        li {
+        /*li {
             margin-bottom: 12px;
             color: var(--whiteColor);
             font-size: 14px;
@@ -4655,14 +4656,14 @@ Footer Area CSS
             &:last-child {
                 margin-bottom: 0;
             }
-        }
+        }*/
     }
     .quick-links-list {
         padding-left: 0;
         margin-bottom: 0;
         list-style-type: none;
 
-        li {
+        /*li {
             margin-bottom: 12px;
             color: var(--whiteColor);
             font-size: 14px;
@@ -4678,14 +4679,14 @@ Footer Area CSS
             &:last-child {
                 margin-bottom: 0;
             }
-        }
+        }*/
     }
     .footer-contact-list {
         padding-left: 0;
         margin-bottom: 0;
         list-style-type: none;
 
-        li {
+        /*li {
             margin-bottom: 6px;
             color: var(--whiteColor);
             font-size: 14px;
@@ -4704,7 +4705,7 @@ Footer Area CSS
             &:last-child {
                 margin-bottom: 0;
             }
-        }
+        }*/
     }
 }
 .copyright-area {
@@ -4728,12 +4729,24 @@ Footer Area CSS
         }
     }
     ul {
-        padding-left: 0;
-        margin-bottom: 0;
+        padding-left: 0;        margin-bottom: 0;
         list-style-type: none;
-        text-align: right;
-
+        text-align: left;
         li {
+            font-size: 14px;
+            line-height: initial;
+
+            color: var(--whiteColor);
+            a {
+                color: var(--whiteColor);
+
+                &:hover {
+                    color: var(--mainColor);
+                }
+            }
+        }
+
+        /*li {
             display: inline-block;
             margin-left: 20px;
             position: relative;
@@ -4765,7 +4778,7 @@ Footer Area CSS
                     display: none;
                 }
             }
-        }
+        }*/
     }
 }
 .circle-map {
@@ -4869,4 +4882,14 @@ Iframe responsive
     height: 100%;
     border: none;
     pointer-events: none;
+}
+
+/*================================================
+Carousel thumbnail
+=================================================*/
+.carousel-indicators button.thumbnail{
+    width: 100px;
+}
+.carousel-indicators {
+    position: static;
 }

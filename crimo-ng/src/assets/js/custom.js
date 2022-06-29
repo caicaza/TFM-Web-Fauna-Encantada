@@ -49,8 +49,8 @@
         loop: true,
         nav: true,
         dots: false,
-        autoplayHoverPause: true,
-        autoplay: true,
+        autoplayHoverPause: false,
+        autoplay: false,
         margin: 30,
         mouseDrag: false,
         navText: [
@@ -81,8 +81,8 @@
         loop: true,
         nav: true,
         dots: false,
-        autoplayHoverPause: true,
-        autoplay: true,
+        autoplayHoverPause: false,
+        autoplay: false,
         mouseDrag: true,
         items: 1,
         navText: [
@@ -96,8 +96,8 @@
         loop: true,
         nav: true,
         dots: false,
-        autoplayHoverPause: true,
-        autoplay: true,
+        autoplayHoverPause: false,
+        autoplay: false,
         mouseDrag: true,
         margin: 30,
         navText: [

@@ -21,12 +21,12 @@ export class BlogComponent implements OnInit {
             foto: 'https://embed.smartframe.io/s/9ea8092d716b95599a3c5e8fc350ffb8/00480068.html?source=aHR0cDovL2xvY2FsaG9zdDo0MjAwL2FuaW1hbA..#0', categoria: 'ave', categoriaName: 'Ave', urlSafe: '', isMindenPictures: true, isAnotherImage: false},
         {id: 'Iguana_marina_de_Galapagos', nombre: 'Iguana Marina de Galápagos',
             foto: 'https://embed.smartframe.io/s/9ea8092d716b95599a3c5e8fc350ffb8/00141054.html?source=aHR0cDovL2xvY2FsaG9zdDo0MjAwL2FuaW1hbA..#0', categoria: 'reptil', categoriaName: 'Reptil',  urlSafe: '', isMindenPictures: true, isAnotherImage: false},
-        // tslint:disable-next-line:max-line-length
-        {id: 'Murcielago_rojo', nombre: 'Murciélago rojo', foto: 'https://www.quasarex.com/wp-content/uploads/2021/03/red-bat-galapagos.jpg', categoria: 'mamifero', categoriaName: 'Mamífero', urlSafe: '',  isMindenPictures: false, isAnotherImage: true},
+        {id: 'Murcielago_rojo', nombre: 'Murciélago rojo',
+            foto: 'https://www.quasarex.com/wp-content/uploads/2021/03/red-bat-galapagos.jpg', categoria: 'mamifero', categoriaName: 'Mamífero', urlSafe: '',  isMindenPictures: false, isAnotherImage: true},
         {id: 'Tiburon_martillo', nombre: 'Tiburón martillo',
             foto: 'https://embed.smartframe.io/s/9ea8092d716b95599a3c5e8fc350ffb8/00154155.html?source=aHR0cDovL2xvY2FsaG9zdDo0MjAwL2FuaW1hbA..#0', categoria: 'vidaMarina', categoriaName: 'Vida Marina', urlSafe: '',  isMindenPictures: true, isAnotherImage: false},
-        // tslint:disable-next-line:max-line-length
-        {id: 'Langosta', nombre: 'Langosta roja', foto: 'https://inaturalist-open-data.s3.amazonaws.com/photos/176817298/large.jpeg', categoria: 'vidaMarina', categoriaName: 'Vida Marina', urlSafe: '',  isMindenPictures: false, isAnotherImage: true},
+        {id: 'Langosta', nombre: 'Langosta roja',
+            foto: 'https://inaturalist-open-data.s3.amazonaws.com/photos/176817298/large.jpeg', categoria: 'vidaMarina', categoriaName: 'Vida Marina', urlSafe: '',  isMindenPictures: false, isAnotherImage: true},
     ];
     listaAux: AnimalModel[] = this.lista;
     // Variables para controlar  la paginación y el número de elementos por página
@@ -138,6 +138,7 @@ export class BlogComponent implements OnInit {
         }
         this.onChangeNumberPages();
         this.onButtonVisibility();
+        // Actualizamos el pageSlice para que se acualice el ngfor
         this.pageSlice = this.listaAux.slice(0, 6);
     }
     // Actualiza la lista auxiliar de acuerdo a la categoría
@@ -152,7 +153,7 @@ export class BlogComponent implements OnInit {
             }
         }
         this.listaAux = listaAux;
-        console.log(this.listaAux);
+        // console.log(this.listaAux);
     }
     public loadScript({id, url}) {
         return new Promise((resolve, reject) => {
