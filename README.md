@@ -3,7 +3,7 @@
 # UNIVERSIDAD INTERNACIONAL DE LA RIOJA
 
 ## Escuela Superior de Ingeniería y Tecnología
-Máster en Diseño y Producción Multimedia
+## Máster en Diseño y Producción Multimedia
 
 ### Trabajo de Fin de Máster
 ### Presentado por: Icaza Guamba Carlos Alexander
