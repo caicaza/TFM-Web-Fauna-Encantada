@@ -20,6 +20,8 @@ import { ProjectsComponent } from './components/pages/projects/projects.componen
 import { ProjectDetailsComponent } from './components/pages/project-details/project-details.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { AnimalDetailsComponent } from './components/pages/animal-details/animal-details.component';
+import {RouterModule} from '@angular/router';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 
 @NgModule({
@@ -44,13 +46,12 @@ import { AnimalDetailsComponent } from './components/pages/animal-details/animal
     AnimalDetailsComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+      BrowserModule,
+      AppRoutingModule],
     schemas: [
       CUSTOM_ELEMENTS_SCHEMA
     ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
